@@ -1,8 +1,8 @@
 
 //funcion saludar
-
+let nombre
 function saludar () {
-    let nombre = prompt ("Ingrese su nombre")
+    let nombre = prompt ("Ingrese su nombre completo")
     alert (
         "Bienvenido/a " + nombre + " al simulador de CONTROL DE INSUMOS" 
     )
@@ -15,77 +15,69 @@ let user
 let pass
 
 function choice () {
-    decision = prompt (" Elija la opcion correspondiente: \n 1: Administrador \n 2: Produccion ")
+    decision = prompt (" Elija la opcion correspondiente: \n 1: Compras/Ingresos \n 2: Produccion/Egresos ")
 
-    if (decision === 1) {
-        let user = prompt ('Ingrese el usuario').toLowerCase()
-        let pass = prompt ('Ingrese contraseña')
-        // Ingreso de usuario ADMINISTRADOR
-        if (user === 'administracion' && pass === '1234') 
-        { alert ('Bienvenido Administrador') } 
+    if (decision === "1") {
+        user = prompt ('Ingrese el usuario').toLowerCase()
+        pass = prompt ('Ingrese contraseña')
+        // Ingreso de usuario COMPRAS
+        if (user === 'compras' && pass === '1234') 
+        { alert ('Bienvenido Compras') } 
         else { alert ('Usuario o Contraseña incorrectos, Intentelo de nuevo')
+        choice ();
         }
     }
-    if (decision === 2) {
-        let user = prompt ('Ingrese el usuario').toLowerCase()
-        let pass = prompt ('Ingrese contraseña')
-        // Ingreso de usuario ADMINISTRADOR
+    if (decision === "2") {
+        user = prompt ('Ingrese el usuario').toLowerCase()
+        pass = prompt ('Ingrese contraseña')
+        // Ingreso de usuario PRODUCCION
         if (user === 'produccion' && pass === '1234') 
-        { alert ('Bienvenido Administrador') } 
+        { alert ('Bienvenido Produccion') } 
         else { alert ('Usuario o Contraseña incorrectos, Intentelo de nuevo')
+        choice ();
         }
     }
     
 }
+choice ();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// //funcion productos
-
-// function productos () {
-//     producto = prompt(
-//         "elija uno de nuestros productos \n 1: Acciones \n 2: Criptomonedas \n 3: Bonos \n 4: Plazo fijo "
-//     )
-// if ( producto === "1" ) {
-//     alert ("Elegiste Acciones")
-//     let valor = prompt ("Ingrese monto de inversion")
-//     alert ("Su rentabilidad es de " + (valor * 1.1).toFixed(2))
-//     console.log (valor)
+//funcion productos
+let ingreso
+let valorFibra
+let valorResina
+let valorCatalizador
+let valorGelcoat
+function ingresos () {
+    ingreso = prompt(
+        "Elija el material a ingresar al almacen \n 1: Fibra de vidrio \n 2: Resina \n 3: Catalizador \n 4: Gelcoat "
+    )
+if ( ingreso === "1" ) {
+    alert ("Elegiste Fibra de vidrio")
+    let valorFibra = prompt ("Especifique la cantidad en kg")
+    alert ("Se registro el ingreso de "+ valorFibra + "KG de Fibra de vidrio")
+    console.log (valorFibra)
     
-// } else if (producto === "2") {
-//     alert ("Elegiste Criptomonedas")
-//     let valor = prompt ("Ingrese monto de inversion")
-//     alert ("Su rentabilidad es de " + (valor * 1.03).toFixed(2))
-//     console.log (valor)
+} else if (ingreso === "2") {
+    alert ("Elegiste Resina")
+    let valorResina = prompt ("Especifique la cantidad en kg")
+    alert ("Se registro el ingreso de "+ valorResina + "KG de Resina" )
+    console.log (valorResina)
     
-// } else if (producto === "3") {
-//     alert ("Elegiste Bonos")
-//     let valor = prompt ("Ingrese monto de inversion")
-//     alert ("Su rentabilidad es de " + (valor * 1.05).toFixed(2))
-//     console.log (valor)
+} else if (ingreso === "3") {
+    alert ("Elegiste Catalizador")
+    let valorCatalizador = prompt ("Especifique la cantidad en kg")
+    alert ("Se registro el ingreso de "+ valorCatalizador + "KG de Catalizador")
+    console.log (valorCatalizador)
     
-// } else if (producto === "4") {
-//     alert ("Elegiste plazo fijo")
-//     let valor = prompt ("Ingrese monto de inversion")
-//     alert ("Su rentabilidad es de " + (valor * 1.11).toFixed(2))
-//     console.log (valor)
+} else if (ingreso === "4") {
+    alert ("Elegiste Gelcoat")
+    let valorGelcoat = prompt ("Especifique la cantidad en kg")
+    alert ("Su rentabilidad es de " + valorGelcoat + "Kg de gelcoat")
+    console.log (valorGelcoat)
     
-// }
-// } 
-// productos ();
+}
+} 
+ingresos ();
 
 // // funcion decision
 // function choice () {
