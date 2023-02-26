@@ -1,3 +1,69 @@
+//Capturar informacion del formulario
+
+const inputNombre = document.querySelector ('#nombre')
+const inputProducto = document.querySelector ('#producto')
+const inputCantidad = document.querySelector ('#cantidad')
+const inputPrecio = document.querySelector ('#precio')
+const btnCargar = document.querySelector ('#btn-guardar')
+
+const registros = []
+
+const cargarRegistro = () => {
+    const valueNombre = inputNombre.value
+    const valueProducto = inputProducto.value
+    const valueCantidad = inputCantidad.value
+    const valuePrecio = inputPrecio.value 
+
+    registros.push ({
+        Nombre: valueNombre,
+        Producto: valueProducto,
+        Cantidad: valueCantidad,
+        Precio: valuePrecio
+    })
+
+    localStorage.setItem ('usuarios',JSON.stringify(usuarios))
+
+}
+
+btnCargar.addEventListener ('click',cargarRegistro)
+console.log (registros)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // // Funcion constructora
 // class Ingresos {
 //     constructor (material,precio,cantidad) {
